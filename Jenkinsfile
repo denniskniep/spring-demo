@@ -11,10 +11,12 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo "Hello"'
-        def customImage = docker.build("spring-demo")
+        script {
+          def customImage = docker.build("spring-demo")
 
-        customImage.inside {
-            sh 'echo "Hello from inside of container"'
+          customImage.inside {
+              sh 'echo "Hello from inside of container"'
+          }
         }
       }
     }
