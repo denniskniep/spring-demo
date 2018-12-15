@@ -1,8 +1,7 @@
 #--------------Build-Container------------------
 FROM maven:3.6.0-jdk-8-alpine AS build
 
-COPY src /app/src
-COPY pom.xml /app
+COPY ./ /app/
 
 WORKDIR /app
 
