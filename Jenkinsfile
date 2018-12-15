@@ -1,10 +1,11 @@
 pipeline {
   agent any
   stages {
-    def app
-
+  
     stage('Clone repository') {
-      checkout scm
+      steps {
+            checkout scm
+      }
     }
 
     stage('Build') {
